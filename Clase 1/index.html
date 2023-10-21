@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arreglos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body onload="show()">
+    <main class="container">
+      <article style="margin-top: 0px">
+
+        <!-- Titulo y nombre -->
+        <header>
+          <hgroup>
+            <h1>Arreglos en JavaScript</h1>
+            <a href="https://github.com/xrimsonn">José Antonio Rosales</a>
+          </hgroup>
+        </header>
+
+        <!-- Lista de nombres -->
+        <h2>Arreglo de strings</h2>
+        <ul id="list"></ul>
+
+        <!-- Tabla de objetos  -->
+        <h2>Arreglo de objetos</h2>
+        <table id="table">
+          <thead>
+            <th>Especie</th>
+            <th>Raza</th>
+            <th>Edad</th>
+          </thead>
+        </table>
+
+        <!-- Funciones del script -->
+        <div class="grid">
+          <button class="contrast" onclick="sumArray()">
+            Sumar array de números (consola)
+          </button>
+          <button class="contrast" onclick="objAttribute()">
+            Mostrar atributo de un objeto (consola)
+          </button>
+        </div>
+
+      </article>
+    </main>
+  </body>
+</html>
