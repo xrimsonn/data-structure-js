@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones de arreglos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body onload="showList()">
+    <main class="container">
+      <article>
+
+        <!-- Titulo y nombre -->
+        <header>
+          <hgroup>
+            <h1>Ordenar arreglos</h1>
+            <a href="https://www.github.com/xrimsonn">José Antonio Rosales</a>
+          </hgroup>
+        </header>
+
+        <!-- Ordenar arraglo de números -->
+        <details>
+          <summary>Números (alfabéticamente)</summary>
+          <ul id="num-list"></ul>
+          <div class="grid">
+            <button onclick="sortNumbers()">Ordenar</button>
+            <button onclick="shuffle(numbers)">Desordenar</button>
+          </div>
+        </details>
+
+        <!-- Ordenar arraglo de nombres -->
+        <details>
+          <summary>Nombres (alfabéticamente)</summary>
+          <ul id="name-list"></ul>
+          <div class="grid">
+            <button onclick="sortNames()">Ordenar</button>
+            <button onclick="shuffle(names)">Desordenar</button>
+          </div>
+        </details>
+
+        <!-- Ordenar arraglo de objetos -->
+        <details>
+          <summary>Personas (por edad)</summary>
+          <ul id="obj-list"></ul>
+          <div class="grid">
+            <button onclick="sortPeopleByAge()">Ordenar</button>
+            <button onclick="shuffle(people)">Desordenar</button>
+          </div>
+        </details>
+        
+      </article>
+    </main>
+  </body>
+</html>
