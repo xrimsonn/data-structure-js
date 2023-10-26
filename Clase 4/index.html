@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 7</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body onload="load()">
+    <main class="container">
+      <article style="margin-top: 0px">
+
+        <!-- Titulo y nombre -->
+        <header>
+          <hgroup>
+            <h1>Método Find</h1>
+            <p>José Antonio Rosales</p>
+          </hgroup>
+        </header>
+
+        <!-- Lista de personas -->
+        <h3>Lista de personas</h3>
+        <ul id="list"></ul>
+        <div class="grid">
+          <button onclick="sort()" type="submit" class="contrast">
+            Ordenar
+          </button>
+          <button onclick="shuffle(people)" type="submit" class="contrast">
+            Desordenar
+          </button>
+        </div>
+        <br /><br />
+
+        <!-- Busqueda por nombre -->
+        <input
+          type="text"
+          name="names"
+          id="names"
+          placeholder="Nombre o apellido a buscar..."
+        />
+        <button onclick="getPerson()" class="contrast">Buscar</button>
+        <p id="namesAns"><em>Resultado</em></p>
+        <br /><br />
+
+        <!-- Busqueda por edad -->
+        <input type="number" name="age" id="age" placeholder="Mayores que..." />
+        <button onclick="getAdults()" type="submit" class="contrast">
+          Buscar
+        </button>
+        <p id="ageAns"><em>Resultado</em></p>
+
+      </article>
+    </main>
+  </body>
+</html>
