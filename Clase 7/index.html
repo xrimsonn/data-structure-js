@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Clase 10</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script src="script.js"></script>
+  </head>
+
+  <body onload="show()">
+    <main class="container">
+      <article style="margin-top: 0px">
+        <hgroup>
+          <h1>Cola del Psicologo</h1>
+          <p>José Antonio Rosales</p>
+        </hgroup>
+        <div class="grid">
+          <input type="text" id="input" placeholder="Nombre..." />
+        </div>
+        <div class="grid">
+          <button class="contrast" onclick="next()">Siguiente</button>
+          <button class="contrast" onclick="add()">Agregar persona</button>
+        </div>
+
+        <h2 id="first"><em>Paciente</em></h2>
+
+        <ul id="list"></ul>
+      </article>
+    </main>
+  </body>
+</html>

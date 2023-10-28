@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pico</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body onload="show()">
+    <main class="container">
+      <article style="margin-top: 0px">
+        <hgroup>
+          <h1>Car list</h1>
+          <p>By José Antonio Rosales</p>
+        </hgroup>
+
+        <div>
+          <input type="text" id="car" placeholder="Add car..." />
+          <button class="contrast" onclick="add()">Insert</button>
+          <button class="secondary" onclick="remove()">Delete</button>
+        </div>
+
+        <ul id="list"></ul>
+      </article>
+    </main>
+  </body>
+</html>

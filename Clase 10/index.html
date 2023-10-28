@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Reproductor de Canciones</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a41d3240c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body onload="load()">
+    <main class="container">
+      <article style="margin-top: 0px">
+        <header>
+          <hgroup>
+            <h1>Track Player :D</h1>
+            <a href="https://github.com/xrimsonn">José Antonio Rosales</a>
+          </hgroup>
+        </header>
+        <div class="grid">
+          <input type="text" id="input" placeholder="Track name..." />
+        </div>
+        <div class="grid">
+          <button class="contrast" onclick="add()">Add track</button>
+          <button class="contrast" onclick="next()">Next track</button>
+          <button class="contrast" onclick="previous()">Previous track</button>
+        </div>
+        <br />
+
+        <h2 id="first"><em>Track</em></h2>
+
+        <ul id="list"></ul>
+        <footer>
+          <details>
+            <summary>History</summary>
+            <ol id="history"></ol>
+          </details>
+          <details>
+            <summary>Catalogue</summary>
+            <ul id="catalogue"></ul>
+          </details>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

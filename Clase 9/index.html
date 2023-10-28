@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>Clase 11</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./font.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body onload="show()">
+    <main class="container">
+      <article style="margin-top: 0px">
+        <hgroup>
+          <h1>Tracks queue</h1>
+          <p>José Antonio Rosales</p>
+        </hgroup>
+        <ul id="list"></ul>
+        <div class="grid">
+          <button class="contrast" onclick="clean()">Limpiar</button>
+          <button class="contrast" onclick="clean_interval()">
+            Limpiar intervalo
+          </button>
+          <button class="contrast" onclick="replace()">Reemplazar</button>
+          <button class="contrast" onclick="insert()">Insertar</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

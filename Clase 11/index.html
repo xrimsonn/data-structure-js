@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calificaciones</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a41d3240c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body onload="load()">
+    <main class="container">
+      <article style="margin-top: 0px">
+        <!-- Título y nombre -->
+        <header>
+          <hgroup>
+            <h1>Tabla de Calificaciones</h1>
+            <a href="https://github.com/xrimsonn">José Antonio Rosales</a>
+          </hgroup>
+        </header>
+
+        <!-- Formulario para agregar alumnos-->
+        <form>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" placeholder="Sofía" />
+
+          <label for="id">Matrícula:</label>
+          <input type="text" id="id" placeholder="y18Dv" />
+
+          <label for="grades">Calificaciones (separadas por comas):</label>
+          <input type="text" id="grades" placeholder="100, 85, 90, 80, 95" />
+
+          <button type="button" onclick="add()" class="contrast">
+            Agregar
+          </button>
+        </form>
+
+        <!-- Tabla de alumnos -->
+        <details>
+          <summary>Tabla de alumnos</summary>
+          <table id="students-table"></table>
+        </details>
+
+        <!-- Tabla de alumnos del profesor -->
+        <details>
+          <summary id="teacher"></summary>
+          <table id="teacher-table"></table>
+        </details>
+      </article>
+    </main>
+  </body>
+</html>
