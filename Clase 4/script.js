@@ -12,7 +12,7 @@ const people = [
   },
   {
     name: 'Yanelin',
-    surname: 'Duarte',
+    surname: 'Gurrola',
     age: 18,
   },
   {
@@ -22,7 +22,7 @@ const people = [
   },
   {
     name: 'Alexito',
-    surname: 'Gurrola',
+    surname: 'Duarte',
     age: 20,
   },
 ];
