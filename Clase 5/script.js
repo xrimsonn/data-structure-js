@@ -11,10 +11,6 @@ class BinaryTree {
     this.root = null;
   }
 
-  constructor(value) {
-    this.root = new Node(value);
-  }
-
   insert(value) {
     this.root = this._insert(this.root, value);
   }
