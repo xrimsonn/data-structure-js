@@ -1,117 +1,104 @@
-function binarySearchTree() {
-  this._root = null;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
-binarySearchTree.prototype = {
-  constructor: binarySearchTree,
+class BinaryTree {
+  constructor() {
+    this.root = null;
+  }
 
-  add: function(value) {
-    // Crear un nuevo nodo
-    var node = {
-      value: value,
-      left: null,
-      right: null
-    };
+  insert(value) {
+    this.root = this._insert(this.root, value);
+  }
 
-    // Caso especial: no hay nodos
-    if (this._root === null) {
-      this._root = node;
+  _insert(node, value) {
+    if (node === null) {
+      return new Node(value);
+    }
+
+    if (value < node.value) {
+      node.left = this._insert(node.left, value);
+    } else if (value > node.value) {
+      node.right = this._insert(node.right, value);
+    }
+
+    return node;
+  }
+
+  traverse(node = this.root) {
+    if (node !== null) {
+      this.traverse(node.left);
+      console.log(node.value);
+      this.traverse(node.right);
+    }
+  }
+
+  remove(value) {
+    const deletedNode = this._remove(this.root, value);
+
+    if (deletedNode !== null) {
+      if (deletedNode.left !== null) {
+        this.insert(deletedNode.left.value);
+      }
+      if (deletedNode.right !== null) {
+        this.insert(deletedNode.right.value);
+      }
+    }
+
+    this.root = deletedNode;
+  }
+
+  _remove(node, value) {
+    if (node === null) {
+      return null;
+    }
+
+    if (value < node.value) {
+      node.left = this._remove(node.left, value);
+    } else if (value > node.value) {
+      node.right = this._remove(node.right, value);
     } else {
-      // Empezar desde la raíz
-      var current = this._root;
-
-      while(true) {
-        // Si el valor es menor que el nodo actual, ir a la izquierda
-        if (value < current.value) {
-          // Si no hay nodo a la izquierda, agregar el nuevo nodo
-          if (current.left === null) {
-            current.left = node;
-            break;
-          } else {
-            current = current.left;
-          }
-        // Si el valor es mayor que el nodo actual, ir a la derecha
-        } else if (value > current.value) {
-          // Si no hay nodo a la derecha, agregar el nuevo nodo
-          if (current.right === null) {
-            current.right = node;
-            break;
-          } else {
-            current = current.right;
-          }
-        // Si el valor es igual al nodo actual, ignorarlo
-        } else {
-          break;
-        }
+      if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
       }
+      const minValue = this.minValue(node.right);
+      node.value = minValue;
+      node.right = this._remove(node.right, minValue);
     }
-  },
+    return node;
+  }
 
-  traverse: function(process) {
-    // Función auxiliar
-    function inOrder(node) {
-      if (node) {
-        // Recorrer el subárbol izquierdo
-        if (node.left !== null) {
-          inOrder(node.left);
-        }
-
-        // Llamar a la función de procesamiento
-        process.call(this, node);
-
-        // Recorrer el subárbol derecho
-        if (node.right !== null) {
-          inOrder(node.right);
-        }
-      }
+  minValue(node) {
+    while (node.left !== null) {
+      node = node.left;
     }
-
-    // Iniciar desde la raíz
-    inOrder(this._root);
-  },
-
-  size: function() {
-    var length = 0;
-
-    this.traverse(function(node) {
-      length++;
-    });
-
-    return length;
-  },
-
-  toArray: function() {
-    var result = [];
-
-    this.traverse(function(node) {
-      result.push(node.value);
-    });
-
-    return result;
-  },
-
-  contains: function(value) {
-    var found = false;
-
-    this.traverse(function(node) {
-      if (value === node.value) {
-        found = true;
-      }
-    });
-
-    return found;
-  },
-
+    return node.value;
+  }
 }
 
-var bst = new binarySearchTree();
-bst.add(3);
-bst.add(2);
-bst.add(4);
-bst.add(1);
-bst.add(5);
-bst.add(6);
-bst.add(7);
-bst.add(8);
+const tree = new BinaryTree();
 
-console.log(bst.toArray());
+tree.insert(10);
+tree.insert(5);
+tree.insert(15);
+tree.insert(3);
+tree.insert(7);
+tree.insert(18);
+tree.insert(9);
+
+console.log('Recorrido en orden:');
+tree.traverse();
+
+console.log('Recorrido después de eliminar 5:');
+tree.remove(5);
+tree.traverse();
+
+console.log('Recorrido después de agregar 12:');
+tree.insert(12);
+tree.traverse();
