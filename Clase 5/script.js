@@ -29,26 +29,8 @@ class BinaryTree {
     return node;
   }
 
-  traverse(node = this.root) {
-    if (node !== null) {
-      this.traverse(node.left);
-      console.log(node.value);
-      this.traverse(node.right);
-    }
-  }
-
   remove(value) {
     const deletedNode = this._remove(this.root, value);
-
-    if (deletedNode !== null) {
-      if (deletedNode.left !== null) {
-        this.insert(deletedNode.left.value);
-      }
-      if (deletedNode.right !== null) {
-        this.insert(deletedNode.right.value);
-      }
-    }
-
     this.root = deletedNode;
   }
 
@@ -80,6 +62,18 @@ class BinaryTree {
     }
     return node.value;
   }
+
+  print() {
+    this._print(this.root, 0);
+  }
+
+  _print(node, depth) {
+    if (node !== null) {
+      this._print(node.right, depth + 1);
+      console.log(' '.repeat(depth * 4) + node.value);
+      this._print(node.left, depth + 1);
+    }
+  }
 }
 
 const tree = new BinaryTree();
@@ -91,14 +85,15 @@ tree.insert(3);
 tree.insert(7);
 tree.insert(18);
 tree.insert(9);
+tree.insert(8);
+tree.insert(14);
+tree.insert(20);
+tree.insert(2);
+tree.insert(6);
+tree.insert(4);
+tree.print();
 
-console.log('Recorrido en orden:');
-tree.traverse();
-
-console.log('Recorrido después de eliminar 5:');
-tree.remove(5);
-tree.traverse();
-
-console.log('Recorrido después de agregar 12:');
-tree.insert(12);
-tree.traverse();
+console.log('Recorrido después de eliminar 7 y 15:');
+tree.remove(7);
+tree.remove(15);
+tree.print();
